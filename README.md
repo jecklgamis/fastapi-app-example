@@ -154,8 +154,6 @@ See `.env.example` for the full list:
 | `APP_ENV`                     | `dev`                       | Environment (`dev`, `test`, `prod`) |
 | `APP_NAME`                    | `fastapi-app-template`      | Application name             |
 | `DEBUG`                       | `false`                     | Enable debug mode            |
-| `SECRET_KEY`                  | `change-me-in-production`   | Secret key for signing       |
-| `ACCESS_TOKEN_EXPIRE_MINUTES` | `30`                        | Token expiry in minutes      |
 | `STATUS_USERNAME`             | `admin`                     | Basic Auth username for /status |
 | `STATUS_PASSWORD`             | `password`                  | Basic Auth password for /status |
 

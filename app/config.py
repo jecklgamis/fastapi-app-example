@@ -29,9 +29,6 @@ class _BaseSettings(BaseSettings):
     app_name: str = "fastapi-app-template"
     debug: bool = False
 
-    secret_key: str = "change-me-in-production"
-    access_token_expire_minutes: int = 30
-
     status_username: str = "admin"
     status_password: str = "password"
 
@@ -43,7 +40,6 @@ class DevSettings(_BaseSettings):
 class TestSettings(_BaseSettings):
     debug: bool = True
     app_name: str = "fastapi-app-template (test)"
-    secret_key: str = "test-secret-key"
     status_username: str = "test-admin"
     status_password: str = "test-password"
 
