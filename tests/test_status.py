@@ -3,6 +3,8 @@ import base64
 import pytest
 from httpx import AsyncClient
 
+from app.config import settings
+
 
 def _basic_auth_header(username: str, password: str) -> dict[str, str]:
     credentials = base64.b64encode(f"{username}:{password}".encode()).decode()
@@ -11,7 +13,7 @@ def _basic_auth_header(username: str, password: str) -> dict[str, str]:
 
 @pytest.mark.asyncio
 async def test_status_with_valid_credentials(client: AsyncClient):
-    headers = _basic_auth_header("admin", "password")
+    headers = _basic_auth_header(settings.status_username, settings.status_password)
     response = await client.get("/status/", headers=headers)
     assert response.status_code == 200
     data = response.json()

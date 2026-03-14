@@ -7,7 +7,7 @@ FastAPI application template. Python 3.12+, async, no database. Docker via Ubunt
 ## Structure
 
 - `app/main.py` — FastAPI app entry point, registers routers
-- `app/config.py` — Settings via pydantic-settings, loaded from `.env`
+- `app/config.py` — Settings via pydantic-settings, env-specific configs (dev/test/prod)
 - `app/routers/` — Route handlers: `root.py`, `probe.py`, `status.py`
 - `tests/` — Async tests with pytest + httpx, shared fixture in `conftest.py`
 - `Dockerfile` — Ubuntu 24.04 LTS base, Python venv, port 8080
@@ -28,6 +28,8 @@ FastAPI application template. Python 3.12+, async, no database. Docker via Ubunt
 - Routers go in `app/routers/` and are registered in `app/main.py`
 - Each router gets its own test file in `tests/test_<router>.py`
 - Test client fixture is shared via `tests/conftest.py`
-- Settings are added to `app/config.py` and `.env.example`
+- Settings are added to `app/config.py` and the `.env.*` files (`.env.dev`, `.env.test`, `.env.prod`)
+- `APP_ENV` environment variable selects the config: `dev` (default), `test`, `prod`
+- Tests automatically set `APP_ENV=test` via `conftest.py`
 - Port 8080 for all server commands
 - `/status/` endpoint is protected with HTTP Basic Auth
