@@ -1,7 +1,8 @@
 GIT_COMMIT := $(shell git rev-parse --short HEAD)
-DOCKER_IMAGE := fastapi-app-template:$(GIT_COMMIT)
+GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+DOCKER_IMAGE := fastapi-app-template:$(GIT_BRANCH)
 
-.PHONY: all run dev install lint audit format test build-info docker-image docker-run docker-stop clean
+.PHONY: all run dev install lint audit format test build-info docker-image docker-run docker-stop up clean
 
 all: clean install format lint test docker-image
 
@@ -27,7 +28,8 @@ docker-image: build-info
 	docker build -t $(DOCKER_IMAGE) .
 docker-run:
 	-docker rm -f fastapi-app-template
-	docker run --rm -d --name fastapi-app-template -p 8080:8080 $(DOCKER_IMAGE)
+	docker run --rm --name fastapi-app-template -p 8080:8080 $(DOCKER_IMAGE)
+up: docker-image docker-run
 docker-stop:
 	docker stop fastapi-app-template
 clean:
