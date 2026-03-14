@@ -1,6 +1,13 @@
 # fastapi-app-template
 
+[![Build](https://github.com/jecklgamis/fastapi-app-template/actions/workflows/build.yaml/badge.svg)](https://github.com/jecklgamis/fastapi-app-template/actions/workflows/build.yaml)
+
 A production-ready FastAPI application template with Docker support.
+
+Run example from Docker Hub:
+```bash 
+docker run -d --name fastapi-app-template -p 8080:8080 -it jecklgamis/fastapi-app-template:main
+```
 
 ## Tech Stack
 
