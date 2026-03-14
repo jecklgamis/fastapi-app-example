@@ -59,14 +59,15 @@ The API will be available at `http://localhost:8080`.
 ### Using Docker
 
 ```bash
-# Build the image
-docker build -t fastapi-app-template .
+# Build and run
+make up
 
-# Run the container
-docker run --rm -d --name fastapi-app-template -p 8080:8080 fastapi-app-template
+# Or separately
+make docker-image
+make docker-run
 
 # Stop
-docker stop fastapi-app-template
+make docker-stop
 ```
 
 ## API Endpoints
@@ -94,6 +95,12 @@ make lint
 
 # Auto-fix and format
 make format
+
+# Dependency vulnerability scan
+make audit
+
+# Full pipeline (clean, install, format, lint, test, docker-image)
+make all
 ```
 
 ## Helm Chart
