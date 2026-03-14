@@ -10,10 +10,10 @@ security = HTTPBasic()
 
 def verify_credentials(credentials: HTTPBasicCredentials = Depends(security)) -> str:  # noqa: B008
     correct_username = secrets.compare_digest(
-        credentials.username, settings.status_username
+        credentials.username, settings.basic_auth_username
     )
     correct_password = secrets.compare_digest(
-        credentials.password, settings.status_password
+        credentials.password, settings.basic_auth_password
     )
     if not (correct_username and correct_password):
         raise HTTPException(

@@ -29,8 +29,8 @@ class _BaseSettings(BaseSettings):
     app_name: str = "fastapi-app-template"
     debug: bool = False
 
-    status_username: str = "admin"
-    status_password: str = "password"
+    basic_auth_username: str = "admin"
+    basic_auth_password: str = "password"
 
 
 class DevSettings(_BaseSettings):
@@ -40,8 +40,8 @@ class DevSettings(_BaseSettings):
 class TestSettings(_BaseSettings):
     debug: bool = True
     app_name: str = "fastapi-app-template (test)"
-    status_username: str = "test-admin"
-    status_password: str = "test-password"
+    basic_auth_username: str = "test-admin"
+    basic_auth_password: str = "test-password"
 
 
 class ProdSettings(_BaseSettings):

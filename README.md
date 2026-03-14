@@ -162,8 +162,8 @@ See `.env.example` for the full list:
 | `APP_ENV`                     | `dev`                       | Environment (`dev`, `test`, `prod`) |
 | `APP_NAME`                    | `fastapi-app-template`      | Application name             |
 | `DEBUG`                       | `false`                     | Enable debug mode            |
-| `STATUS_USERNAME`             | `admin`                     | Basic Auth username for /status |
-| `STATUS_PASSWORD`             | `password`                  | Basic Auth password for /status |
+| `BASIC_AUTH_USERNAME`          | `admin`                     | Basic Auth username for /status |
+| `BASIC_AUTH_PASSWORD`          | `password`                  | Basic Auth password for /status |
 
 ## License
 

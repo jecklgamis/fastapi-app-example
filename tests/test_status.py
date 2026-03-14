@@ -13,7 +13,9 @@ def _basic_auth_header(username: str, password: str) -> dict[str, str]:
 
 @pytest.mark.asyncio
 async def test_status_with_valid_credentials(client: AsyncClient):
-    headers = _basic_auth_header(settings.status_username, settings.status_password)
+    headers = _basic_auth_header(
+        settings.basic_auth_username, settings.basic_auth_password
+    )
     response = await client.get("/status/", headers=headers)
     assert response.status_code == 200
     data = response.json()
