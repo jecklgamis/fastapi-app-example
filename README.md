@@ -79,6 +79,7 @@ docker stop fastapi-app-template
 | `GET`    | `/probe/ready`    | Readiness probe                |
 | `GET`    | `/probe/startup`  | Startup probe                  |
 | `GET`    | `/status/`        | System status (Basic Auth)     |
+| `GET`    | `/build-info`     | Build info (commit, branch, timestamp) |
 
 Interactive API docs are available at `/docs` (Swagger UI) and `/redoc`.
 

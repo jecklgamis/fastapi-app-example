@@ -31,6 +31,9 @@ jobs:
           ruff check .
           mypy app/
 
+      - name: Audit dependencies
+        run: pip-audit
+
       - name: Run tests
         run: pytest -v
 
