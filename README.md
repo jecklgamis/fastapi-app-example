@@ -1,6 +1,6 @@
 # fastapi-app-template
 
-[![Build](https://github.com/jecklgamis/fastapi-app-template/actions/workflows/build.yaml/badge.svg)](https://github.com/jecklgamis/fastapi-app-template/actions/workflows/build.yaml)
+[![Build](https://github.com/jecklgamis/fastapi-app-example/actions/workflows/build.yaml/badge.svg)](https://github.com/jecklgamis/fastapi-app-example/actions/workflows/build.yaml)
 
 A production-ready FastAPI application template with Docker support.
 
