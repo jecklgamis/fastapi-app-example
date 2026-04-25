@@ -5,8 +5,7 @@ image:
   pullPolicy: Always
   tag: "main"
 
-imagePullSecrets:
-  - name: dockerhub
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
@@ -32,15 +31,9 @@ ingress:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-  hosts:
-    - host: fastapi-app-template.jecklgamis.com
-      paths:
-        - path: /
-          pathType: Prefix
+  host: ""
   tls:
     - secretName: fastapi-app-template
-      hosts:
-        - fastapi-app-template.jecklgamis.com
 
 resources: {}
 
