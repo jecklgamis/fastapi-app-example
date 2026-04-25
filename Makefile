@@ -1,7 +1,7 @@
 GIT_COMMIT := $(shell git rev-parse --short HEAD)
 GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-DOCKER_IMAGE := fastapi-app-template:$(GIT_BRANCH)
-CONTAINER_NAME := fastapi-app-template
+DOCKER_IMAGE := fastapi-app-example:$(GIT_BRANCH)
+CONTAINER_NAME := fastapi-app-example
 
 .PHONY: all install format lint audit test run dev \
         build-info docker-image docker-run docker-stop up clean
@@ -35,7 +35,7 @@ dev:
 
 # === Docker ===
 build-info:
-	@echo '{"app":"fastapi-app-template","version":"0.1.0","git_commit":"$(GIT_COMMIT)","git_branch":"$(GIT_BRANCH)","build_timestamp":"$(shell date -u +%Y-%m-%dT%H:%M:%SZ)"}' > build-info.json
+	@echo '{"app":"fastapi-app-example","version":"0.1.0","git_commit":"$(GIT_COMMIT)","git_branch":"$(GIT_BRANCH)","build_timestamp":"$(shell date -u +%Y-%m-%dT%H:%M:%SZ)"}' > build-info.json
 
 docker-image: build-info
 	docker build -t $(DOCKER_IMAGE) .

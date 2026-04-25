@@ -8,4 +8,4 @@ async def test_root(client: AsyncClient):
     assert response.status_code == 200
     data = response.json()
     assert data["message"] == "It works on my machine!"
-    assert data["app"] == "fastapi-app-template"
+    assert data["app"] == "fastapi-app-example"

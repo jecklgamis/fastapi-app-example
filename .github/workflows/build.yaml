@@ -41,7 +41,7 @@ jobs:
           images: ${{ github.repository_owner }}/${{ github.event.repository.name }}
 
       - name: Log in to Docker Hub
-        if: ${{ github.event.repository.name == 'fastapi-app-template' && github.event_name != 'pull_request' }}
+        if: ${{ github.event.repository.name == 'fastapi-app-example' && github.event_name != 'pull_request' }}
         uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -51,6 +51,6 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          push: ${{ github.event.repository.name == 'fastapi-app-template' && github.event_name != 'pull_request' }}
+          push: ${{ github.event.repository.name == 'fastapi-app-example' && github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

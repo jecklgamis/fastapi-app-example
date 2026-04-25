@@ -26,7 +26,7 @@ class _BaseSettings(BaseSettings):
     )
 
     app_env: Environment = APP_ENV
-    app_name: str = "fastapi-app-template"
+    app_name: str = "fastapi-app-example"
     debug: bool = False
 
     basic_auth_username: str = "admin"
@@ -39,7 +39,7 @@ class DevSettings(_BaseSettings):
 
 class TestSettings(_BaseSettings):
     debug: bool = True
-    app_name: str = "fastapi-app-template (test)"
+    app_name: str = "fastapi-app-example (test)"
     basic_auth_username: str = "test-admin"
     basic_auth_password: str = "test-password"
 

@@ -1,5 +1,5 @@
 [project]
-name = "fastapi-app-template"
+name = "fastapi-app-example"
 version = "0.1.0"
 description = "A production-ready FastAPI application template"
 requires-python = ">=3.12"

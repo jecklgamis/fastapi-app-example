@@ -1,4 +1,4 @@
-# fastapi-app-template
+# fastapi-app-example
 
 [![Build](https://github.com/jecklgamis/fastapi-app-example/actions/workflows/build.yaml/badge.svg)](https://github.com/jecklgamis/fastapi-app-example/actions/workflows/build.yaml)
 
@@ -6,7 +6,7 @@ A production-ready FastAPI application template with Docker support.
 
 Run from Docker Hub:
 ```bash 
-docker run --rm --name fastapi-app-template -p 8080:8080 -it jecklgamis/fastapi-app-template:main
+docker run --rm --name fastapi-app-example -p 8080:8080 -it jecklgamis/fastapi-app-example:main
 ```
 
 ## Tech Stack
@@ -45,7 +45,7 @@ docker run --rm --name fastapi-app-template -p 8080:8080 -it jecklgamis/fastapi-
 
 ```bash
 # Clone the repository
-git clone <repo-url> && cd fastapi-app-template
+git clone <repo-url> && cd fastapi-app-example
 
 # Install dependencies
 make install
@@ -130,7 +130,7 @@ Default configuration in `chart/values.yaml`:
 
 | Key                  | Default                                  |
 |----------------------|------------------------------------------|
-| `image.repository`   | `jecklgamis/fastapi-app-template`        |
+| `image.repository`   | `jecklgamis/fastapi-app-example`        |
 | `image.tag`          | `main`                                   |
 | `service.type`       | `ClusterIP`                              |
 | `service.port`       | `80`                                     |
@@ -160,7 +160,7 @@ See `.env.example` for the full list:
 | Variable                      | Default                     | Description                  |
 |-------------------------------|-----------------------------|------------------------------|
 | `APP_ENV`                     | `dev`                       | Environment (`dev`, `test`, `prod`) |
-| `APP_NAME`                    | `fastapi-app-template`      | Application name             |
+| `APP_NAME`                    | `fastapi-app-example`      | Application name             |
 | `DEBUG`                       | `false`                     | Enable debug mode            |
 | `BASIC_AUTH_USERNAME`          | `admin`                     | Basic Auth username for /status |
 | `BASIC_AUTH_PASSWORD`          | `password`                  | Basic Auth password for /status |

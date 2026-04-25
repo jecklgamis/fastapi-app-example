@@ -1,4 +1,4 @@
-APP_NAME := fastapi-app-template
+APP_NAME := fastapi-app-example
 VERSION := $(shell yq .appVersion chart/Chart.yaml)
 HELM_CHART := $(APP_NAME)-$(VERSION).tgz
 

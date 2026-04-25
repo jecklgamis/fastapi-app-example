@@ -9,7 +9,7 @@ router = APIRouter()
 _BUILD_INFO_PATH = Path("build-info.json")
 
 _DEFAULT_BUILD_INFO: dict[str, str] = {
-    "app": "fastapi-app-template",
+    "app": "fastapi-app-example",
     "version": "0.1.0",
     "git_commit": "unknown",
     "git_branch": "unknown",
