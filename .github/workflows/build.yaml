@@ -32,7 +32,9 @@ jobs:
           mypy app/
 
       - name: Audit dependencies
-        run: pip-audit
+        run: |
+          pip install --upgrade pip
+          pip-audit
 
       - name: Run tests
         run: pytest -v
