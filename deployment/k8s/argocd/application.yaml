@@ -27,10 +27,8 @@ spec:
           - name: dockerhub
   destination:
     server: https://kubernetes.default.svc
-    namespace: fastapi-app-example
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
