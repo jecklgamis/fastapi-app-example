@@ -6,25 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: ghcr.io/jecklgamis
-    chart: fastapi-app-example
-    targetRevision: 1.0.0-rc.1
-    helm:
-      values: |
-        image:
-          tag: main
-        ingress:
-          hosts:
-            - host: fastapi-app-example.jecklgamis.com
-              paths:
-                - path: /
-                  pathType: Prefix
-          tls:
-            - secretName: fastapi-app-example
-              hosts:
-                - fastapi-app-example.jecklgamis.com
-        imagePullSecrets:
-          - name: dockerhub
+    repoURL: https://github.com/jecklgamis/fastapi-app-example
+    targetRevision: main
+    path: deployment/k8s/helm/chart
   destination:
     server: https://kubernetes.default.svc
     namespace: default
