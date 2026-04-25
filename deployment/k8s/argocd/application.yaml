@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fastapi-app-template
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: ghcr.io/jecklgamis
+    chart: fastapi-app-template
+    targetRevision: 1.0.0-rc.1
+    helm:
+      values: |
+        image:
+          tag: main
+        ingress:
+          hosts:
+            - host: fastapi-app-template.jecklgamis.com
+              paths:
+                - path: /
+                  pathType: Prefix
+          tls:
+            - secretName: fastapi-app-template
+              hosts:
+                - fastapi-app-template.jecklgamis.com
+        imagePullSecrets:
+          - name: dockerhub
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fastapi-app-template
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
