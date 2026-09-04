@@ -2,7 +2,7 @@
 
 ## Project
 
-FastAPI application template. Python 3.12+, async, no database. Docker via Python 3.12-slim.
+FastAPI application template. Python 3.14+, async, no database. Docker via Python 3.14-slim.
 
 ## Structure
 
@@ -10,7 +10,7 @@ FastAPI application template. Python 3.12+, async, no database. Docker via Pytho
 - `app/config.py` — Settings via pydantic-settings, env-specific configs (dev/test/prod)
 - `app/routers/` — Route handlers: `root.py`, `probe.py`, `status.py`, `build_info.py`
 - `tests/` — Async tests with pytest + httpx, shared fixture in `conftest.py`
-- `Dockerfile` — Multi-stage build, Python 3.12-slim base, port 8080
+- `Dockerfile` — Multi-stage build, Python 3.14-slim base, port 8080
 
 ## Commands
 
