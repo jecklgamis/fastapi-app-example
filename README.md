@@ -165,6 +165,16 @@ See `.env.example` for the full list:
 | `BASIC_AUTH_USERNAME`          | `admin`                     | Basic Auth username for /status |
 | `BASIC_AUTH_PASSWORD`          | `password`                  | Basic Auth password for /status |
 
+## Load Testing
+
+Load tests use [resonate](https://github.com/jecklgamis/resonate). With the app running:
+
+```bash
+brew install jecklgamis/tap/resonate
+./run-perf-tests.sh
+```
+See [perf-tests](perf-tests) for the scenarios and details.
+
 ## License
 
 Apache 2.0 - see [LICENSE](LICENSE)
